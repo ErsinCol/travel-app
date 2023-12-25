@@ -1,17 +1,22 @@
 <script setup>
-import {onMounted, ref } from 'vue'
-import { useRoute } from 'vue-router'
+import { onMounted, ref, defineProps } from 'vue'
 
-const route = useRoute();
-const destination = ref(null);
+const props = defineProps({
+  slug: {
+    type: String,
+    required: true
+  }
+})
 
-const initData = async() => {
-  const response = await fetch(`/api/${route.params.slug}.json`);
-  destination.value = await response.json();
+const destination = ref(null)
+
+const initData = async () => {
+  const response = await fetch(`/api/${props.slug}.json`)
+  destination.value = await response.json()
 }
 
-onMounted(()=>{
-  initData();
+onMounted(() => {
+  initData()
 })
 </script>
 

@@ -1,5 +1,5 @@
 <script setup>
-import TheNavigation from "@/components/TheNavigation.vue";
+import TheNavigation from '@/components/TheNavigation.vue'
 </script>
 
 <template>
@@ -9,5 +9,4 @@ import TheNavigation from "@/components/TheNavigation.vue";
   </div>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

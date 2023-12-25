@@ -1,21 +1,22 @@
 <script setup>
-import { computed } from 'vue'
+import {onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
-import sourceData from '@/data.json'
 
-const route = useRoute()
+const route = useRoute();
+const destination = ref(null);
 
-const destinationId = computed(() => {
-  return parseInt(route.params.id)
-})
+const initData = async() => {
+  const response = await fetch(`/api/${route.params.slug}.json`);
+  destination.value = await response.json();
+}
 
-const destination = computed(() => {
-  return sourceData.destinations.find((destination) => destination.id === destinationId.value)
+onMounted(()=>{
+  initData();
 })
 </script>
 
 <template>
-  <section class="destination">
+  <section v-if="destination" class="destination">
     <h1>{{ destination.name }}</h1>
     <div class="destination-details">
       <img :src="`/images/${destination.image}`" :alt="destination.name" />

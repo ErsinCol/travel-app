@@ -1,35 +1,57 @@
-# travel-app
+# Travel App 
 
-This template should help get you started developing with Vue 3 in Vite.
+This project is developed as a part of the Vue Router 4 course. It is a Single Page Application (SPA) built with Vue 3 and Vue Router 4. The goal of this project is to demonstrate the implementation of Vue Router features covered in the course.
 
-## Recommended IDE Setup
+## Table of Contents
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- [Installation](#installation)
+- [Usage](#usage)
+    - [Running the Development Server](#running-the-development-server)
+    - [Building for Production](#building-for-production)
+- [Vue Router Features Demonstrated](#vue-router-features-demonstrated)
 
-## Customize configuration
+## Installation
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+```bash
+# Clone the repository
+git clone https://github.com/ErsinCol/travel-app.git
 
-## Project Setup
+# Navigate to the project directory
+cd travel-app
 
-```sh
+# Install dependencies
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+## Usage
 
-```sh
+### Running the Development Server
+
+```bash
+# Run the development server
 npm run dev
 ```
 
-### Compile and Minify for Production
-
-```sh
+### Building for Production
+```bash
+# Build for production
 npm run build
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+## Vue Router Features Demonstrated
 
-```sh
-npm run lint
-```
+- How to scaffold a new Vue 3 project, including the Vue Router with Vite
+- How to create routes, including named routes
+- Learn how to lazy load your routes
+- Learn how to work with Vue Router Params and pass them as props to components
+- How to create dynamic and nested routes
+- Learn how to create impressive route transitions
+- How to create a 404 page with the Vue Router
+- Learn what navigation guards are and how to create an authentication middleware for your app
+- How to work with Vue router in tandem with the Vue Composition API
+
+
+
+
+
+

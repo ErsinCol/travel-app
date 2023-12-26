@@ -54,7 +54,20 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(),
   routes: routes,
-  linkActiveClass: 'custom-link-active'
+  linkActiveClass: 'custom-link-active',
+  scrollBehavior(to, from, savedPosition) {
+    return (
+      savedPosition ||
+      new Promise((resolve) => {
+        setTimeout(() => {
+          resolve({
+            top: 0,
+            behavior: 'smooth'
+          })
+        }, 300)
+      })
+    )
+  }
 })
 
 export default router

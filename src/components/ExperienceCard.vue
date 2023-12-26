@@ -2,16 +2,16 @@
 defineProps({
   experience: {
     type: Object,
-    required: true,
+    required: true
   }
 })
 </script>
 
 <template>
   <div class="card">
-    <img :src="`/images/${experience.image}`" :alt="experience.name">
+    <img :src="`/images/${experience.image}`" :alt="experience.name" />
     <span class="card__text">
-      {{experience.name}}
+      {{ experience.name }}
     </span>
   </div>
 </template>

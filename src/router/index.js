@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '@/views/HomePage.vue'
+import sourceData from '@/data.json'
 
 const routes = [
   {
@@ -15,6 +16,22 @@ const routes = [
       ...route.params,
       id: parseInt(route.params.id)
     }),
+    beforeEnter: (to, from) => {
+      const exist = sourceData.destinations.find(
+        (destination) => destination.id === parseInt(to.params.id)
+      )
+      if (!exist) {
+        return {
+          name: 'NotFound',
+          // Match the path of your current page and keep the same url...
+          params: {
+            pathMatch: to.path.substring(1).split('/')
+          },
+          query: to.query,
+          hash: to.hash
+        }
+      }
+    },
     children: [
       {
         path: ':experienceSlug',

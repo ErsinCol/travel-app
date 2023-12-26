@@ -1,6 +1,4 @@
-<script setup>
-
-</script>
+<script setup></script>
 
 <template>
   <span class="go-back">
@@ -8,6 +6,4 @@
   </span>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

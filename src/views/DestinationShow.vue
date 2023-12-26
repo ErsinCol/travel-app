@@ -1,7 +1,7 @@
 <script setup>
 import { onMounted, ref, defineProps } from 'vue'
 import ExperienceCard from '@/components/ExperienceCard.vue'
-import GoBack from "@/components/GoBack.vue";
+import GoBack from '@/components/GoBack.vue'
 
 const props = defineProps({
   id: {
@@ -40,14 +40,14 @@ onMounted(() => {
       <h2>Top Experiences in {{ destination.name }}</h2>
       <div class="cards">
         <router-link
-            v-for="experience in destination.experiences"
-            :key="experience.slug"
-            :to="{
-          name: 'experience.show',
-          params: {
-            experienceSlug: experience.slug
-          }
-        }"
+          v-for="experience in destination.experiences"
+          :key="experience.slug"
+          :to="{
+            name: 'experience.show',
+            params: {
+              experienceSlug: experience.slug
+            }
+          }"
         >
           <ExperienceCard :experience="experience"></ExperienceCard>
         </router-link>

@@ -1,6 +1,7 @@
 <script setup>
 import { onMounted, ref, defineProps } from 'vue'
 import ExperienceCard from '@/components/ExperienceCard.vue'
+import GoBack from "@/components/GoBack.vue";
 
 const props = defineProps({
   id: {
@@ -28,6 +29,7 @@ onMounted(() => {
 <template>
   <section v-if="destination" class="destination">
     <h1>{{ destination.name }}</h1>
+    <GoBack />
     <div class="destination-details">
       <img :src="`/images/${destination.image}`" :alt="destination.name" />
       <p>{{ destination.description }}</p>

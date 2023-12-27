@@ -16,6 +16,9 @@ const logout = () => {
   <div>
     <h1>Greetings, {{ username }}</h1>
     <button v-on:click="logout">Logout</button>
+    <router-link :to="{ name: 'invoices' }">
+      <button>Invoices</button>
+    </router-link>
   </div>
 </template>
 

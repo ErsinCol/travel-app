@@ -7,8 +7,8 @@ const destinations = ref(sourceData.destinations)
 
 <template>
   <div id="nav">
-    <router-link to="/" id="logo">Travel App</router-link>
-    <router-link
+    <AppLink to="/" id="logo">Travel App</AppLink>
+    <AppLink
       v-for="destination in destinations"
       :key="destination.id"
       :to="{
@@ -20,8 +20,9 @@ const destinations = ref(sourceData.destinations)
       }"
     >
       {{ destination.name }}
-    </router-link>
-    <router-link :to="{ name: 'protected' }">Dashboard</router-link>
+    </AppLink>
+    <AppLink :to="{ name: 'protected' }">Dashboard</AppLink>
+    <AppLink to="https://github.com/ErsinCol">My Github Profile</AppLink>
   </div>
 </template>
 

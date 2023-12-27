@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import AppLink from '@/components/AppLink.vue'
 
 const username = ref(window.user)
 
@@ -16,9 +17,9 @@ const logout = () => {
   <div>
     <h1>Greetings, {{ username }}</h1>
     <button v-on:click="logout">Logout</button>
-    <router-link :to="{ name: 'invoices' }">
+    <AppLink :to="{ name: 'invoices' }">
       <button>Invoices</button>
-    </router-link>
+    </AppLink>
   </div>
 </template>
 

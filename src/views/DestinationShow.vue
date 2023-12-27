@@ -2,6 +2,7 @@
 import { onMounted, ref, defineProps } from 'vue'
 import ExperienceCard from '@/components/ExperienceCard.vue'
 import GoBack from '@/components/GoBack.vue'
+import AppLink from '@/components/AppLink.vue'
 
 const props = defineProps({
   slug: {
@@ -35,7 +36,7 @@ onMounted(() => {
     <section v-if="destination" class="experiences">
       <h2>Top Experiences in {{ destination.name }}</h2>
       <div class="cards">
-        <router-link
+        <AppLink
           v-for="experience in destination.experiences"
           :key="experience.slug"
           :to="{
@@ -46,7 +47,7 @@ onMounted(() => {
           }"
         >
           <ExperienceCard :experience="experience"></ExperienceCard>
-        </router-link>
+        </AppLink>
       </div>
     </section>
     <router-view></router-view>

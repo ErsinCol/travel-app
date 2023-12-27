@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import sourceData from '@/data.json'
+import AppLink from '@/components/AppLink.vue'
 
 const destinations = ref(sourceData.destinations)
 </script>
@@ -9,7 +10,7 @@ const destinations = ref(sourceData.destinations)
   <div class="home">
     <h1>All Destinations</h1>
     <div class="destinations">
-      <router-link
+      <AppLink
         v-for="destination in destinations"
         :key="destination.id"
         :to="{
@@ -22,7 +23,7 @@ const destinations = ref(sourceData.destinations)
       >
         <h2>{{ destination.name }}</h2>
         <img :src="`/images/${destination.image}`" :alt="destination.name" />
-      </router-link>
+      </AppLink>
     </div>
   </div>
 </template>

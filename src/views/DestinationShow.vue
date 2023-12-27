@@ -4,10 +4,6 @@ import ExperienceCard from '@/components/ExperienceCard.vue'
 import GoBack from '@/components/GoBack.vue'
 
 const props = defineProps({
-  id: {
-    type: Number,
-    required: true
-  },
   slug: {
     type: String,
     required: true

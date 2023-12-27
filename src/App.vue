@@ -5,7 +5,14 @@ import TheNavigation from '@/components/TheNavigation.vue'
 <template>
   <TheNavigation />
   <div class="container">
-    <router-view v-slot="{ Component }">
+    <!-- Sidebar -->
+    <router-view v-slot="{ Component }" class="view left-sidebar" name="LeftSidebar">
+      <transition name="fade" mode="out-in">
+        <component :is="Component" :key="$route.path" />
+      </transition>
+    </router-view>
+    <!-- Main -->
+    <router-view v-slot="{ Component }" class="main-view">
       <transition name="fade" mode="out-in">
         <component :is="Component" :key="$route.path" />
       </transition>
@@ -21,5 +28,14 @@ import TheNavigation from '@/components/TheNavigation.vue'
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+}
+.container {
+  display: flex;
+}
+.left-sidebar {
+  width: 20%;
+}
+.main-view {
+  width: 100%;
 }
 </style>
